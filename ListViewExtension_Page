@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity" extensions="ListViewExtension">
+    <apex:form >
+        <apex:selectList size="1">
+            <apex:selectOptions value="{!listViewOptions}" />
+        </apex:selectList>
+    </apex:form>
+</apex:page>

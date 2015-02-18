@@ -1,0 +1,18 @@
+public with sharing class ListViewExtension
+{
+    public List<SelectOption> listViewOptions
+    {
+        get
+        {
+            if (listViewOptions == null)
+            {
+                ApexPages.StandardSetController setController = new ApexPages.StandardSetController([
+                    SELECT Id FROM Opportunity LIMIT 1
+                ]);
+                listViewOptions = setController.getListViewOptions();
+            }
+            return listViewOptions;
+        }
+        private set;
+    }
+}
